@@ -22,7 +22,7 @@ const binderData = {
       id: "robot-overview",
       name: "Our 2026 Robot",
       number: "01",
-      images: ["robot-overview.jpg"],
+      images: ["images/hardware/robot-overview.jpg"],
       description: "Honeycomb is built around three core goals identified in game analysis: winning autonomous, carrying large ball capacity, and maintaining high throughput at the shooter. The robot features a swerve drivetrain, an over-the-bumper intake, a large extendable hopper, and a fixed dual-drum shooter.",
       specs: [
         { label: "Season",        value: "FIRST Rebuilt 2026" },
@@ -42,7 +42,7 @@ const binderData = {
       id: "drivetrain",
       name: "Drivetrain",
       number: "02",
-      images: ["drivetrain.jpg"],
+      images: ["images/hardware/drivetrain.jpg"],
       description: "Honeycomb's swerve drivetrain allows quick maneuvering around obstacles. Built on a brainpan-style frame for easy electronics access and a lower centre of gravity, with miter rails for fast bumper swapping.",
       specs: [
         { label: "Frame",         value: "26\" × 26\" aluminium boxtube" },
@@ -66,7 +66,7 @@ const binderData = {
       name: "Intake",
       number: "03",
       images: [
-        "intake-final.jpg",
+        "images/hardware/intake-final.jpg",
       ],
       description: "After three design iterations across competitions, the final World Championship intake uses a NEO VORTEX motor, redesigned geometry, crash bars, and polycarbonate side plates. The pivot mechanism deploys over the bumper, with an automatic retraction when crossing the bump.",
       specs: [
@@ -89,7 +89,7 @@ const binderData = {
       name: "Hopper",
       number: "04",
       images: [
-        "hopper-final.jpg",
+        "images/hardware/hopper-final.jpg",
       ],
       description: "The large hopper allows Honeycomb to carry many balls at once, reducing required cycles to the intake. The final version uses an angled flat floor instead of a belt floor, eliminating the most common failure point while maintaining similar throughput via gravity.",
       specs: [
@@ -111,7 +111,7 @@ const binderData = {
       name: "Shooter & Kicker",
       number: "05",
       images: [
-        "shooter-final.jpg",
+        "images/hardware/shooter-final.jpg",
       ],
       description: "The final World Championship shooter is a fixed dual-width drum design with 6×3 inch ThriftyBot flywheels, no divider, and dual kicker motors on 3:1 gearboxes. This configuration maximises throughput and eliminates the jamming that plagued the V1 design.",
       specs: [
@@ -138,7 +138,7 @@ const binderData = {
       id: "intake-subsystem",
       name: "Intake Subsystem",
       number: "01",
-      images: ["robot-side.jpg"],
+      images: ["images/hardware/robot-side.jpg"],
       description: "The intake subsystem handles both ball pickup and agitation during shooting. When intaking, the arm pivots down and spins the NEO VORTEX. An automatic bump-intaking mode retracts the arm as the robot crosses the bump so nothing clips.",
       specs: [
         { label: "Agitation",     value: "Intake pivots up & down" },
@@ -156,7 +156,7 @@ const binderData = {
       id: "shooter-subsystem",
       name: "Shooter Subsystem",
       number: "02",
-      images: ["shooter-subsystem.jpg"],
+      images: ["images/software/shooter-subsystem.jpg"],
       description: "The shooter subsystem automatically adjusts motor power based on distance from the hub, using a linear equation calibrated from real shot data. A custom PIDF loop maintains flywheel speed even under motor bog from high ball throughput.",
       specs: [
         { label: "Power Model",   value: "Linear equation (distance)" },
@@ -174,7 +174,7 @@ const binderData = {
       id: "aiming",
       name: "Aiming Subsystem",
       number: "03",
-      images: ["aiming.jpg"],
+      images: ["images/software/aiming.jpg"],
       description: "The aiming subsystem uses LimeLight 3 positional data fed into a trigonometric auto-aim function. Given the robot's Pose2D, it calculates X and Y error and uses arctan²(y, x) to determine the required heading angle, then feeds that into a custom PID loop.",
       specs: [
         { label: "Sensor",        value: "LimeLight 3" },
@@ -194,7 +194,7 @@ const binderData = {
       id: "autonomous",
       name: "Autonomous",
       number: "04",
-      images: ["autonomous.jpg"],
+      images: ["images/software/autonomous.jpg"],
       description: "PathPlanner-based autonomous routines with LimeLight relocalization. Honeycomb runs 4 autonomous paths: two double swipes (one each side of the hub), a preload shot, and a follower bump autonomous on the human player side.",
       specs: [
         { label: "Path Tool",     value: "PathPlanner" },
@@ -214,7 +214,7 @@ const binderData = {
       id: "organization",
       name: "Organization",
       number: "05",
-      images: ["organization.jpg"],
+      images: ["images/software/organization.jpg"],
       description: "The programming team uses GitHub Kanban to plan, assign, and track all tasks in real-time. Kanban cards include time estimates, step-by-step instructions for complex tasks, and assignee tracking — enabling cohesive team coordination throughout build season.",
       specs: [
         { label: "Tool",          value: "GitHub Projects (Kanban)" },
@@ -238,7 +238,7 @@ const binderData = {
       id: "intake-v1",
       name: "Intake V1 — Canadian Pacific",
       number: "01",
-      images: ["intake-v1.jpg"],
+      images: ["images/prototypes/intake-v1.jpg"],
       description: "First intake design, debuted at Canadian Pacific. Used 3 sets of 2 inch ThriftyBot squish wheels, a curved HDPE ramp to maintain compression, and a pivot deploy mechanism.",
       outcome: "Rejected",
       outcomeNote: "Wheels lacked compression and grip; ramp bent under load; intake collided with hopper on deploy.",
@@ -255,7 +255,7 @@ const binderData = {
       id: "intake-v2",
       name: "Intake V2 — Idaho",
       number: "02",
-      images: ["intake-v2.jpg"],
+      images: ["images/prototypes/intake-v2.jpg"],
       description: "Idaho regional update. Swapped front squish wheels for grip-tape rollers, added star wheels to the second shaft, and tensioned the intake arm to prevent hopper collision.",
       outcome: "Iterated",
       outcomeNote: "Solved grip and collision issues. Idle ball zones inside intake discovered — addressed in V3.",
@@ -271,7 +271,7 @@ const binderData = {
       id: "intake-v3",
       name: "Intake V3 — World Championship",
       number: "03",
-      images: ["intake-v3.jpg"],
+      images: ["images/prototypes/intake-v3.jpg"],
       description: "Final intake for Worlds. NEO VORTEX motor, fully redesigned geometry, crash bars at impact points, and polycarbonate side plates. Rollers are quick-swap for easy pit repair.",
       outcome: "Adopted",
       outcomeNote: "Stronger motor, no idle ball zones, reinforced structure, and fast field repairs. This is the final design.",
@@ -287,7 +287,7 @@ const binderData = {
       id: "hopper-v1",
       name: "Hopper V1 — Pre-Competition",
       number: "04",
-      images: ["hopper-v1.jpg"],
+      images: ["images/prototypes/hopper-v1.jpg"],
       description: "Initial hopper design with 25 parallel belt floor belts and an extendable rear section. Built for maximum ball capacity before regional season.",
       outcome: "Rejected",
       outcomeNote: "Belt floor constantly slipped off pulleys, provided poor traction, and the extendable section caught on the intake.",
@@ -304,7 +304,7 @@ const binderData = {
       id: "hopper-v2",
       name: "Hopper V2 — Post-Competition",
       number: "05",
-      images: ["hopper-v2.jpg"],
+      images: ["images/prototypes/hopper-v2.jpg"],
       description: "Belt floor fully removed and replaced with an angled flat floor that uses gravity to guide balls. Extendable section removed to eliminate intake collision.",
       outcome: "Adopted",
       outcomeNote: "Removing the belt eliminated the top failure mode. Gravity feed maintained similar throughput with zero belt failures.",
@@ -320,7 +320,7 @@ const binderData = {
       id: "shooter-v1",
       name: "Shooter V1 — Canadian Pacific",
       number: "06",
-      images: ["shooter-v1.jpg"],
+      images: ["images/prototypes/shooter-v1.jpg"],
       description: "First shooter design: a 2-lane dual flywheel with a divider, 2 ungeared NEO flywheels, a 5:1 NEO kicker, and 3 in ThriftyBot weighted wheels. Debuted at Canadian Pacific.",
       outcome: "Iterated",
       outcomeNote: "Divider slowed throughput; lack of flywheel weight caused motor bog under load. Required heavier wheels and removal of divider.",
@@ -337,7 +337,7 @@ const binderData = {
       id: "shooter-v2",
       name: "Shooter V2 — Idaho & Worlds",
       number: "07",
-      images: ["shooter-v2.jpg"],
+      images: ["images/prototypes/shooter-v2.jpg"],
       description: "Idaho and Worlds update. Added 6×3 inch weighted ThriftyBot flywheels, removed divider and ball path, added a second kicker motor, and switched kicker gearboxes to 3:1.",
       outcome: "Adopted",
       outcomeNote: "Higher inertia eliminated motor bog, divider removal reduced jams, dual kickers increased consistency. Final design for Worlds.",
