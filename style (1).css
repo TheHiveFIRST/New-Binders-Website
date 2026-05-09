@@ -475,8 +475,7 @@ body {
 }
 
 .entry-title::after {
-  content: '.';
-  color: var(--yellow);
+  content: '';
 }
 
 .entry-desc {
