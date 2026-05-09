@@ -452,11 +452,13 @@ body {
   border-right: 1px solid var(--border-dim);
 }
 
+/* ── ENTRY TEXT — simplified to 3 levels ───────────────── */
+
 .entry-eyebrow {
   font-family: var(--font-mono);
   font-size: 11px;
-  letter-spacing: 0.18em;
-  color: var(--yellow);
+  letter-spacing: 0.15em;
+  color: var(--text-muted);
   opacity: 0.6;
   margin-bottom: 10px;
   text-transform: uppercase;
@@ -468,7 +470,7 @@ body {
   font-weight: 700;
   color: var(--text);
   line-height: 1;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
   letter-spacing: -0.01em;
 }
 
@@ -479,25 +481,24 @@ body {
 
 .entry-desc {
   font-size: 14px;
-  line-height: 1.7;
-  color: var(--text-muted);
-  margin-bottom: 32px;
-  max-width: 42ch;
+  line-height: 1.75;
+  color: var(--text);
+  opacity: 0.75;
+  margin-bottom: 28px;
 }
 
-/* Outcome badge (prototypes) */
+/* Outcome badge — keep colour, just simpler */
 .outcome-badge {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  font-family: var(--font-mono);
-  font-size: 10px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  font-family: var(--font-body);
+  font-size: 12px;
   padding: 4px 12px;
   border-radius: 3px;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
   width: fit-content;
+  font-weight: 500;
 }
 
 .outcome-badge.adopted  { background: rgba(94,191,106,0.12); color: var(--green);  border: 1px solid rgba(94,191,106,0.25); }
@@ -505,90 +506,79 @@ body {
 .outcome-badge.iterated { background: rgba(224,148,64,0.12); color: var(--amber);  border: 1px solid rgba(224,148,64,0.25); }
 
 .outcome-note {
-  font-size: 12px;
-  font-family: var(--font-mono);
-  color: var(--text-dim);
-  margin-bottom: 24px;
-  font-style: italic;
+  font-size: 13px;
+  color: var(--text);
+  opacity: 0.5;
+  margin-bottom: 20px;
 }
 
-/* Specs table */
+/* Specs table — unified text */
 .specs-label {
-  font-family: var(--font-mono);
-  font-size: 10px;
-  letter-spacing: 0.15em;
-  color: var(--text-dim);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
   text-transform: uppercase;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
+  opacity: 0.6;
 }
 
 .specs-table {
   width: 100%;
   border-collapse: collapse;
-  margin-bottom: 32px;
+  margin-bottom: 28px;
 }
 
 .specs-table tr {
   border-bottom: 1px solid var(--border-dim);
 }
 
-.specs-table tr:last-child {
-  border-bottom: none;
-}
+.specs-table tr:last-child { border-bottom: none; }
 
 .specs-table td {
-  padding: 7px 0;
-  font-size: 13px;
+  padding: 8px 0;
+  font-size: 14px;
+  color: var(--text);
+  opacity: 0.85;
 }
 
 .specs-table td:first-child {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  color: var(--text-dim);
-  letter-spacing: 0.05em;
+  opacity: 0.5;
   width: 45%;
 }
 
-.specs-table td:last-child {
-  color: var(--text);
-  font-weight: 500;
-}
-
-/* Features list */
+/* Features list — unified text, subtle bullet */
 .features-label {
-  font-family: var(--font-mono);
-  font-size: 10px;
-  letter-spacing: 0.15em;
-  color: var(--text-dim);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
   text-transform: uppercase;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
+  opacity: 0.6;
 }
 
 .features-list {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 8px;
 }
 
 .features-list li {
-  font-size: 13px;
-  color: var(--text-muted);
+  font-size: 14px;
+  color: var(--text);
+  opacity: 0.75;
   display: flex;
   align-items: flex-start;
   gap: 10px;
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
 .features-list li::before {
-  content: '';
-  width: 6px;
-  height: 6px;
-  min-width: 6px;
-  background: var(--yellow);
-  border-radius: 50%;
-  margin-top: 6px;
-  opacity: 0.7;
+  content: '—';
+  color: var(--text-muted);
+  opacity: 0.4;
+  flex-shrink: 0;
+  margin-top: 1px;
 }
 
 /* ── FOOTER ──────────────────────────────────────────────── */
