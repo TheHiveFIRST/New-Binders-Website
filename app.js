@@ -37,14 +37,14 @@ function makeSVGPlaceholder(id, name, number) {
   const path = getIcon(id || name);
   // unique pattern id to avoid svg conflicts
   const pid = "p" + Math.random().toString(36).slice(2,7);
-  return `<div style="width:100%;height:100%;min-height:400px;background:#161709;position:relative;overflow:hidden;">
+  return `<div style="width:100%;height:100%;min-height:400px;background:transparent;position:relative;overflow:hidden;">
 <svg viewBox="0 0 480 400" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;position:absolute;inset:0;">
   <defs>
     <pattern id="${pid}" x="0" y="0" width="52" height="60" patternUnits="userSpaceOnUse">
       <polygon points="26,2 50,15 50,45 26,58 2,45 2,15" fill="none" stroke="#F5C518" stroke-width="0.4" opacity="0.1"/>
     </pattern>
   </defs>
-  <rect width="480" height="400" fill="url(#${pid})"/>
+  <rect width="480" height="400" fill="transparent"/>
   <g transform="translate(216,140)">
     <path d="${path}" fill="none" stroke="#F5C518" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" opacity="0.4"/>
   </g>
@@ -304,3 +304,25 @@ function init() {
 }
 
 document.addEventListener("DOMContentLoaded", init);
+
+// ── THEME TOGGLE ─────────────────────────────────────────────
+
+function initTheme() {
+  const btn = document.getElementById("theme-toggle");
+  const html = document.documentElement;
+
+  // Load saved preference
+  const saved = localStorage.getItem("theme") || "dark";
+  html.setAttribute("data-theme", saved);
+  btn.textContent = saved === "dark" ? "☀️" : "🌙";
+
+  btn.addEventListener("click", () => {
+    const current = html.getAttribute("data-theme");
+    const next = current === "dark" ? "light" : "dark";
+    html.setAttribute("data-theme", next);
+    btn.textContent = next === "dark" ? "☀️" : "🌙";
+    localStorage.setItem("theme", next);
+  });
+}
+
+document.addEventListener("DOMContentLoaded", initTheme);
